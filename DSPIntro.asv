@@ -26,7 +26,7 @@ transpVecB = colVecB';
 transpmatC = matC';
 
 % Matrix/Vector Multiplication
-A = [1 3 4; 2 4 7]
+A = [1 3 4; 2 4 7];
 B = [5; 6; 1];
 C = A * B;
 
@@ -35,8 +35,39 @@ D = [2 8 1; 1 1 5];
 E = A .* D;
 
 % Simultaneous Equations
-A = [3 4 -2; 4 -6 2; 2 1 0.2]
-p = [6; 1; 2]
+A = [3 4 -2; 4 -6 2; 2 1 0.2];
+p = [6; 1; 2];
 % q = [x; y; z]
 % Aq = p
-q = 
+q = inv(A) * p;
+
+% Simultaneous Equations - Singular Matrix Example
+A = [3 4; 6 8];
+p = [6; 12];
+cond(A);
+% q = inv(A) * p;
+
+% Complex Numbers
+val = 3 + 2j;
+cplAry = [2; 3; 9] + j * [0.2; 3; 0.5];
+cplAry = [2 + 0.2j; 3 + 3j; 9 + 0.5j];
+
+% Magnitude of Complex Numbers
+absAry = abs(cplAry);
+
+% Phase of Complex Numbers
+phAry = phase(cplAry);
+
+% Angles in Degrees
+phAry = phase(cplAry) .* 180/pi;
+
+% Extract Real Part
+rlAry = real(cplAry);
+
+% Extract Real Part of Particular Element
+real(cplAry(3));
+
+% Extract Imaginary Part
+imAry = imag(cplAry)
+
+% Plotting
